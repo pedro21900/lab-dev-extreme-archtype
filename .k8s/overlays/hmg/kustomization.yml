@@ -1,0 +1,10 @@
+  namespace: sds-hmg
+  bases:
+  - ../../base
+  resources:
+  - ingress.yml
+  patchesStrategicMerge:
+  - cpu_count.yml
+  - memory_count.yml
+  - replica_count.yml
+  - set_env_spring_profile.yml

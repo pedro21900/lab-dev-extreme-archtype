@@ -1,0 +1,18 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-dev-extreme-archetype
+spec: 
+  template:
+    spec:
+      containers:
+      - name: lab-dev-extreme-archetype
+        resources:
+          limits:
+            cpu: 256m
+          requests:
+            cpu: 128m
+
+...

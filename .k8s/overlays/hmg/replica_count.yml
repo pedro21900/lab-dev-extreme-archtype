@@ -1,0 +1,10 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: lab-dev-extreme-archetype
+spec:
+  replicas: 1
+
+...

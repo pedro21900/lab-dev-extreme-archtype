@@ -1,0 +1,45 @@
+'Diagrama de classe das classes de dominio do projeto. As classes devem ser
+'definidas obrigatóriamente dentro da diretiva package.
+@startuml
+
+skinparam linetype ortho
+
+package "br.jus.tre_pa.app.domain" {
+
+'    class Pessoa {
+'        -id: Long
+'        -nome: String
+'        -dtNascimento: LocalDate
+'    }
+'
+'    class PontoTransmissao {
+'        -id: Long
+'        -nome: String
+'        -endereco: String
+'    }
+'
+'    class LocalVotacao {
+'        -id: Long
+'        -codObj: Integer
+'        -numero: Integer
+'        -cep: String
+'    }
+'
+'    class Zona {
+'        -id: Long
+'        -numero: Integer
+'        -sigla: String
+'    }
+'
+'    class Municipio {
+'        -id: Long
+'        -nome: String
+'    }
+}
+
+'PontoTransmissao "1" --> "1..*" LocalVotacao
+'PontoTransmissao "0..*" --> "1" Zona
+'PontoTransmissao "1" --> "0..1" Pessoa
+'Zona "1..*" --> "1..*" Municipio
+
+@enduml

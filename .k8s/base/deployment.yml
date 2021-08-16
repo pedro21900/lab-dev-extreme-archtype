@@ -1,0 +1,22 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-dev-extreme-archetype
+spec:
+  selector:
+    matchLabels:
+      app: lab-dev-extreme-archetype
+  template:
+    metadata:
+      labels:
+        app: lab-dev-extreme-archetype
+    spec:
+      containers:
+      - name: lab-dev-extreme-archetype
+        image: lab-dev-extreme-archetype
+        ports:
+        - containerPort: 8080
+
+...

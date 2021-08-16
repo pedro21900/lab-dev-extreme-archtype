@@ -1,0 +1,20 @@
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lab-dev-extreme-archetype 
+spec:
+  rules:
+  - host: "prod-k8s.tre-pa.jus.br"
+    http:
+      paths:
+      - backend:
+          service: 
+            name: lab-dev-extreme-archetype
+            port:
+              number: 8080
+        path: /lab-dev-extreme-archetype
+        pathType: Prefix
+
+...

@@ -1,0 +1,20 @@
+FROM reg.tre-pa.jus.br/library/maven:3.6-jdk-8-slim
+
+ENV TZ=America/Belem
+
+RUN echo 'Acquire::http { Proxy "http://apt-proxy.tre-pa.jus.br:3142"; };' >> /etc/apt/apt.conf.d/01proxy
+RUN echo 'Acquire::https { Proxy "http://apt-proxy.tre-pa.jus.br:3142"; };' >> /etc/apt/apt.conf.d/01proxy
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
+    && localedef -i pt_BR -c -f UTF-8 -A /usr/share/locale/locale.alias pt_BR.UTF-8
+
+ENV LANG=pt_BR.UTF-8
+ENV LANGUAGE=pt_BR:pt:en
+
+WORKDIR /lab-dev-extreme-archetype/lab-dev-extreme-archetype-backend
+
+ADD pom.xml /lab-dev-extreme-archetype
+
+ADD .m2/settings.xml /root/.m2/settings.xml

@@ -1,0 +1,9 @@
+'Diagrama de classe com as definições de Enums. Os enums devem ser definidos
+'dentro da diretiva package.
+@startuml
+
+package "br.jus.tre_pa.app.domain.enums" {
+
+}
+
+@enduml

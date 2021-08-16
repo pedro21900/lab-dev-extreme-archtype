@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.jus.tre_pa.app</groupId>
+    <artifactId>lab-dev-extreme-archetype</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <name>lab-dev-extreme-archetype</name>
+    <description>lab-dev-extreme-archetype</description>
+
+    <modules>
+        <module>lab-dev-extreme-archetype-frontend</module>
+        <module>lab-dev-extreme-archetype-backend</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>xtool-io</groupId>
+                <artifactId>xcli-plugin</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>xtool-io</groupId>
+                        <artifactId>xcli</artifactId>
+                        <version>1.0.0-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-maven</id>
+            <url>http://nexus.tre-pa.jus.br/repository/maven-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

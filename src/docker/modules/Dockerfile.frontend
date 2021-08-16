@@ -1,0 +1,12 @@
+FROM reg.tre-pa.jus.br/library/node:12.13.0-alpine
+
+WORKDIR /lab-dev-extreme-archetype-frontend
+
+ADD ./lab-dev-extreme-archetype-frontend/.npmrc /root/
+ADD lab-dev-extreme-archetype-frontend/package.json  .
+ADD lab-dev-extreme-archetype-frontend/package-lock.json .
+ADD lab-dev-extreme-archetype-frontend/cldrdatadwnl.json .
+
+RUN apk update && apk add git
+
+RUN npm install

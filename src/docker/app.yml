@@ -1,0 +1,40 @@
+version: "2.4"
+services:
+  lab-dev-extreme-archetype-backend:
+    container_name: lab-dev-extreme-archetype-backend
+    image: lab-dev-extreme-archetype-backend:dev
+    build:
+      context: .
+      dockerfile: src/docker/modules/Dockerfile.backend
+    command: "mvn clean spring-boot:run -Dspring-boot.run.arguments=--spring.datasource.url=jdbc:oracle:thin:@lab-dev-extreme-archetype-oraclexe:1521:xe -Pdocker-output-directory"
+    restart: unless-stopped
+    volumes:
+      -  /tmp/.m2/repository:/root/.m2/repository
+      - ./lab-dev-extreme-archetype-backend/:/lab-dev-extreme-archetype/lab-dev-extreme-archetype-backend
+    ports:
+      - 8080:8080
+      - 9090:9090
+    networks:
+      - lab-dev-extreme-archetype-net
+
+  lab-dev-extreme-archetype-frontend:
+    container_name: lab-dev-extreme-archetype-frontend
+    image: lab-dev-extreme-archetype-frontend:dev
+    build:
+      context: .
+      dockerfile: src/docker/modules/Dockerfile.frontend
+    command: "npx ng serve --host 0.0.0.0"
+    volumes:
+      - ./lab-dev-extreme-archetype-frontend/:/lab-dev-extreme-archetype-frontend
+      - lab-dev-extreme-archetype-node-modules:/lab-dev-extreme-archetype-frontend/node_modules
+    ports:
+      - 4200:4200
+    networks:
+      - lab-dev-extreme-archetype-net
+
+volumes:
+  lab-dev-extreme-archetype-node-modules:
+
+networks:
+  lab-dev-extreme-archetype-net:
+    external: true

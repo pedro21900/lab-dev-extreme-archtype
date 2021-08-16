@@ -1,0 +1,11 @@
+{
+    "core": [
+        "http://nexus.tre-pa.jus.br/repository/cldr-repo/cldr-core/archive/30.0.3.zip",
+        "http://nexus.tre-pa.jus.br/repository/cldr-repo/cldr-dates-modern/archive/30.0.3.zip",
+        "http://nexus.tre-pa.jus.br/repository/cldr-repo/cldr-localenames-modern/archive/30.0.3.zip",
+        "http://nexus.tre-pa.jus.br/repository/cldr-repo/cldr-misc-modern/archive/30.0.3.zip",
+        "http://nexus.tre-pa.jus.br/repository/cldr-repo/cldr-numbers-modern/archive/30.0.3.zip",
+        "http://nexus.tre-pa.jus.br/repository/cldr-repo/cldr-segments-modern/archive/30.0.3.zip",
+        "http://nexus.tre-pa.jus.br/repository/cldr-repo/cldr-units-modern/archive/30.0.3.zip"
+    ]
+}

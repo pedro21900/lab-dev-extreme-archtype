@@ -1,0 +1,7 @@
+  resources:
+  - service.yml
+  - deployment.yml
+  images:
+  - name: lab-dev-extreme-archetype
+    newName: reg.tre-pa.jus.br/sds/apps/lab-dev-extreme-archetype
+    newTag: 0.0.0
